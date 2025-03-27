@@ -34,12 +34,8 @@ public class AuthorizationConsumer {
         String identifier = request.getDriverIdentifier().getId();
         AuthorizationStatus status = authorizationService.determineAuthorizationStatus(identifier);
        
-        System.out.println("\n\n\n\n Request " + identifier);
-        
-        System.out.println("\n\n\n\n Response " + status.name());
         AuthorizationResponse response = new AuthorizationResponse(status);
         
         kafkaTemplate.send("authorization-responses", key, response);
-        //kafkaTemplate.send("auth-responses", response);
     }
-}
+}	

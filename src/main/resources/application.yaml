@@ -17,6 +17,7 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
+      
   
   kafka:
     bootstrap-servers: kafka:9092
@@ -31,4 +32,5 @@ spring:
     producer:
       properties:
         spring.json.trusted.packages: "*"
+        
         
